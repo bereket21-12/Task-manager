@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Tasks from '../components/Tasks';
-import MainLayout from '../layouts/MainLayout';
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Tasks from "../components/Tasks";
+import MainLayout from "../layouts/MainLayout";
 
 const Home = () => {
-
-  const authState = useSelector(state => state.authReducer);
+  const authState = useSelector((state) => state.authReducer);
   const { isLoggedIn } = authState;
 
   useEffect(() => {
-    document.title = authState.isLoggedIn ? `${authState.user.name}'s tasks` : "Task Manager";
+    document.title = authState.isLoggedIn
+      ? `${authState.user.name}'s tasks`
+      : "Task Manager";
   }, [authState]);
-
-
 
   return (
     <>
@@ -25,7 +24,7 @@ const Home = () => {
             </h1>
             <Link
               to="/signup"
-              className="mt-10 text-xl bg-lime-400 py-2 px-6 rounded-full hover:bg-lime-500 transition duration-300"
+              className="mt-10 text-xl border-x-1 shadow-lg shadow-lime-400 py-2 px-6 rounded-full hover:bg-lime-500 transition duration-300"
             >
               <span className="transition-[margin]">
                 Join now to manage your tasks
@@ -58,6 +57,6 @@ const Home = () => {
       </MainLayout>
     </>
   );
-}
+};
 
-export default Home
+export default Home;
