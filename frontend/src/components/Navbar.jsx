@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       <header className="flex justify-between sticky top-0 p-4 shadow-sm items-center bg-gradient-to-t bg-opacity-90 from-transparent to-green-900 h-24">
-        <h2 className="cursor-pointer uppercase font-bold text-white">
+        <h2 className="cursor-pointer uppercase font-bold text-white text-3xl">
           <Link to="/"> Task Manager </Link>
         </h2>
         <ul className="hidden md:flex gap-4 uppercase font-medium">
@@ -57,7 +57,6 @@ const Navbar = () => {
           <i className="fa-solid fa-bars"></i>
         </span>
 
-        {/* Navbar displayed as sidebar on smaller screens */}
         <div
           className={`absolute md:hidden right-0 top-0 bottom-0 transition ${
             isNavbarOpen === true ? "translate-x-0" : "translate-x-full"

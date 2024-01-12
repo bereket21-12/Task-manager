@@ -87,27 +87,62 @@ const Task = () => {
   return (
     <>
       <MainLayout>
-        <form className='m-auto my-16 max-w-[1000px] bg-white p-8 border-2 shadow-md rounded-md'>
+        <form className="m-auto my-16 max-w-[1000px] bg-gradient-to-t from-slate-800 to-teal-900 p-8 shadow-md rounded-md">
           {loading ? (
             <Loader />
           ) : (
             <>
-              <h2 className='text-center mb-4'>{mode === "add" ? "Add New Task" : "Edit Task"}</h2>
+              <h2 className="text-center text-lg block font-medium text-gray-200 mb-1">
+                {mode === "add" ? "Add New Task" : "Edit Task"}
+              </h2>
               <div className="mb-4">
-                <label htmlFor="description">Description</label>
-                <Textarea type="description" name="description" id="description" value={formData.description} placeholder="Write here.." onChange={handleChange} />
+                <label
+                  className="text-lg block font-medium text-gray-200 mb-1"
+                  htmlFor="description"
+                >
+                  Description
+                </label>
+                <Textarea
+                  type="description"
+                  name="description"
+                  id="description"
+                  value={formData.description}
+                  placeholder="Write here.."
+                  onChange={handleChange}
+                />
                 {fieldError("description")}
               </div>
 
-              <button className='bg-primary text-white px-4 py-2 font-medium hover:bg-primary-dark' onClick={handleSubmit}>{mode === "add" ? "Add task" : "Update Task"}</button>
-              <button className='ml-4 bg-red-500 text-white px-4 py-2 font-medium' onClick={() => navigate("/")}>Cancel</button>
-              {mode === "update" && <button className='ml-4 bg-blue-500 text-white px-4 py-2 font-medium hover:bg-blue-600' onClick={handleReset}>Reset</button>}
+              <button
+                className="py-2 px-3 cursor-pointer text-white text-center
+            shadow-md shadow-green-400 font-mono bg-gradient-to-t from-green-900 to-green-400
+            hover:bg-green-600 hover:shadow-none transition hover:text-emerald-50 rounded-full mt-4"
+                onClick={handleSubmit}
+              >
+                {mode === "add" ? "Add task" : "Update Task"}
+              </button>
+              <button
+                className="ml-4 py-2 px-3 cursor-pointer text-white text-center
+            shadow-md shadow-red-400 font-mono bg-gradient-to-t from-red-900 to-red-400
+            hover:bg-green-600 hover:shadow-none transition hover:text-emerald-50 rounded-full mt-4"
+                onClick={() => navigate("/")}
+              >
+                Cancel
+              </button>
+              {mode === "update" && (
+                <button
+                  className="ml-4 bg-blue-500 text-white px-4 py-2 font-medium hover:bg-blue-600"
+                  onClick={handleReset}
+                >
+                  Reset
+                </button>
+              )}
             </>
           )}
         </form>
       </MainLayout>
     </>
-  )
+  );
 }
 
 export default Task
