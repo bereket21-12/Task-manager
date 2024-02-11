@@ -36,13 +36,10 @@ const Home = () => {
 
             <div className="mt-12 flex flex-col items-center">
               <h2 className="text-2xl mb-4 font-semibold text-lime-300">
-                Meet the Team
+                ALX Portfolio Project
               </h2>
               <ul className="list-none text-xl text-green-50">
                 <li className="mb-2">🚀 Abel Zeleke</li>
-                <li className="mb-2">🌟 Bereket Tadele</li>
-                <li className="mb-2">🎨 Rebecca Asrat</li>
-                <li className="mb-2">⚙️ Tsion Tegene</li>
               </ul>
             </div>
           </div>
